@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MaxPassword — Private password manager for iPhone, iPad &amp; Mac</title>
+<meta name="description" content="MaxPassword is an end-to-end encrypted password manager. Your vault is encrypted on your device and synced to your own Google Drive. We never see your passwords." />
+<style>
+  :root{
+    --violet:#7C3AED; --indigo:#4F46E5; --pink:#EC4899; --orange:#FB7185;
+    --cyan:#22D3EE; --teal:#2DD4BF; --amber:#F59E0B;
+    --ink:#0B0B18; --surface:#17172B; --surface2:#21213B;
+    --text:#FFFFFF; --muted:rgba(255,255,255,.62); --line:rgba(255,255,255,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:
+      radial-gradient(900px 600px at 12% -10%, rgba(124,58,237,.35), transparent 60%),
+      radial-gradient(800px 600px at 100% 0%, rgba(236,72,153,.28), transparent 55%),
+      radial-gradient(700px 700px at 50% 120%, rgba(34,211,238,.18), transparent 60%),
+      var(--ink);
+    color:var(--text); line-height:1.6; min-height:100vh; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  header.nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px}
+  .logo{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--violet),var(--indigo));
+    box-shadow:0 10px 26px rgba(124,58,237,.5);font-size:22px}
+  nav a{color:var(--muted);text-decoration:none;margin-left:22px;font-weight:600;font-size:15px}
+  nav a:hover{color:var(--text)}
+
+  .hero{text-align:center;padding:64px 0 40px}
+  .hero h1{font-size:clamp(38px,7vw,68px);font-weight:900;letter-spacing:-1px;line-height:1.05}
+  .grad{background:linear-gradient(90deg,var(--pink),var(--orange),var(--amber));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p.sub{max-width:680px;margin:22px auto 0;font-size:clamp(16px,2.4vw,20px);color:var(--muted)}
+  .pill{display:inline-flex;gap:8px;align-items:center;margin-top:28px;padding:10px 18px;border-radius:999px;
+    background:rgba(45,212,191,.16);border:1px solid rgba(45,212,191,.45);color:#bdf6ee;font-weight:600;font-size:14px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:54px 0}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:26px}
+  .card .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:22px;margin-bottom:14px}
+  .i1{background:linear-gradient(135deg,var(--violet),var(--indigo))}
+  .i2{background:linear-gradient(135deg,var(--pink),var(--orange))}
+  .i3{background:linear-gradient(135deg,var(--cyan),var(--teal))}
+  .i4{background:linear-gradient(135deg,var(--amber),var(--pink))}
+  .i5{background:linear-gradient(135deg,var(--indigo),var(--cyan))}
+  .i6{background:linear-gradient(135deg,var(--teal),var(--violet))}
+  .card h3{font-size:18px;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:15px}
+
+  section.block{margin:60px 0}
+  section.block h2{font-size:clamp(26px,4vw,36px);font-weight:800;margin-bottom:14px}
+  section.block h2 .grad{font-weight:800}
+  .lead{color:var(--muted);max-width:760px;font-size:17px}
+
+  .data{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:30px;margin-top:24px}
+  .data ul{list-style:none;display:grid;gap:16px}
+  .data li{display:flex;gap:14px;align-items:flex-start}
+  .data li .dot{flex:0 0 auto;width:24px;height:24px;border-radius:8px;display:grid;place-items:center;font-size:14px;
+    background:linear-gradient(135deg,var(--teal),var(--cyan));margin-top:2px}
+  .data li b{display:block}
+  .data li span{color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);margin-top:70px;padding:34px 0;color:var(--muted);font-size:14px}
+  footer .row{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+  footer a{color:var(--cyan);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  .note{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.4);color:#ffe2ad;
+    border-radius:14px;padding:14px 16px;font-size:13px;margin-top:26px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="nav">
+    <div class="brand"><div class="logo">🔐</div> MaxPassword</div>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#data">Your data</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Your passwords,<br><span class="grad">encrypted end‑to‑end.</span></h1>
+    <p class="sub">MaxPassword is a beautiful, private password manager for iPhone, iPad, and Mac.
+       Everything is encrypted on your device and synced to <b>your own</b> Google Drive — so your
+       passwords travel with you, and no one else can read them. Not even us.</p>
+    <div class="pill">✅ End‑to‑end encrypted · we never see your data</div>
+  </section>
+
+  <section id="features">
+    <div class="grid">
+      <div class="card"><div class="ic i1">🛡️</div><h3>Strong encryption</h3>
+        <p>Your vault is sealed with AES‑256‑GCM. The key is derived from your master password using
+           PBKDF2 (310,000 iterations) and never leaves your device.</p></div>
+      <div class="card"><div class="ic i2">🔑</div><h3>Everything in one place</h3>
+        <p>Store usernames, passwords, secure notes, and your own custom fields. A built‑in generator
+           creates strong, unique passwords in a tap.</p></div>
+      <div class="card"><div class="ic i3">☁️</div><h3>Sync via your Google Drive</h3>
+        <p>Your encrypted vault syncs through a private folder in your own Google Drive, keeping
+           iPhone, iPad, and Mac up to date — with the same master password.</p></div>
+      <div class="card"><div class="ic i4">👤</div><h3>Face ID &amp; Touch ID</h3>
+        <p>Unlock instantly with biometrics, or fall back to your master password. The vault locks
+           itself when you leave.</p></div>
+      <div class="card"><div class="ic i5">🚫</div><h3>No accounts, no tracking</h3>
+        <p>There's no MaxPassword account and no analytics server. We don't run ads and we don't
+           profile you.</p></div>
+      <div class="card"><div class="ic i6">📱</div><h3>iPhone, iPad &amp; Mac</h3>
+        <p>One vault across all your Apple devices, with a bold, modern design that feels right at
+           home on each one.</p></div>
+    </div>
+  </section>
+
+  <section id="data" class="block">
+    <h2>How your data is <span class="grad">handled</span></h2>
+    <p class="lead">MaxPassword is built so that we, the developer, have no way to read your
+       information. Here is exactly what happens to your data and how we use Google services.</p>
+
+    <div class="data">
+      <ul>
+        <li><div class="dot">🔒</div><div>
+          <b>Encrypted before it ever leaves your device</b>
+          <span>Your passwords are encrypted locally with a key only you can produce (your master
+          password). We never receive your master password, your encryption key, or your plaintext data.</span></div></li>
+        <li><div class="dot">📂</div><div>
+          <b>Stored in your own Google Drive — app folder only</b>
+          <span>If you turn on sync, the encrypted vault is saved to a hidden, app‑specific folder in
+          your Google Drive (the <code>drive.appdata</code> scope). MaxPassword cannot see, read, or
+          touch any of your other Google Drive files.</span></div></li>
+        <li><div class="dot">🧭</div><div>
+          <b>Used only to sync your vault</b>
+          <span>We use Google Drive solely to store and retrieve your one encrypted vault file so it
+          stays in sync across your devices. That's the only purpose.</span></div></li>
+        <li><div class="dot">🤝</div><div>
+          <b>Never sold or shared</b>
+          <span>We do not sell your data and do not share it with third parties. There is no
+          advertising and no profiling.</span></div></li>
+        <li><div class="dot">🗑️</div><div>
+          <b>You stay in control</b>
+          <span>You can delete your vault at any time and revoke MaxPassword's access from your Google
+          Account settings whenever you like.</span></div></li>
+      </ul>
+    </div>
+
+    <p class="lead" style="margin-top:24px">
+      MaxPassword's use and transfer of information received from Google APIs adheres to the
+      <a href="https://developers.google.com/terms/api-services-user-data-policy" style="color:var(--cyan)">Google API Services User Data Policy</a>,
+      including the Limited Use requirements. Read the full <a href="privacy.html" style="color:var(--cyan)">Privacy Policy</a>.
+    </p>
+  </section>
+
+  <div class="note">
+    <b>Before you publish:</b> replace <code>[Your Company / Developer Name]</code>,
+    <code>your‑domain.com</code>, and the contact email throughout this page and
+    <code>privacy.html</code> with your real details, then host both files on the domain you submit
+    to Google.
+  </div>
+
+  <footer>
+    <div class="row">
+      <div>© 2026 [Your Company / Developer Name]. MaxPassword.</div>
+      <div>
+        <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+        <a href="mailto:krishna.tadi@gmail.com">krishna.tadi@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
