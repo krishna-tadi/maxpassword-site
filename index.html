@@ -68,8 +68,9 @@
   footer .row{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
   footer a{color:var(--cyan);text-decoration:none}
   footer a:hover{text-decoration:underline}
-  .note{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.4);color:#ffe2ad;
-    border-radius:14px;padding:14px 16px;font-size:13px;margin-top:26px}
+  .soon{display:inline-block;margin-left:8px;font-size:11px;font-weight:700;vertical-align:middle;
+    padding:3px 9px;border-radius:999px;background:rgba(124,58,237,.25);
+    border:1px solid rgba(124,58,237,.5);color:#d8c9ff}
 </style>
 </head>
 <body>
@@ -80,6 +81,7 @@
     <nav>
       <a href="#features">Features</a>
       <a href="#data">Your data</a>
+      <a href="#roadmap">Roadmap</a>
       <a href="privacy.html">Privacy</a>
     </nav>
   </header>
@@ -95,21 +97,27 @@
   <section id="features">
     <div class="grid">
       <div class="card"><div class="ic i1">🛡️</div><h3>Strong encryption</h3>
-        <p>Your vault is sealed with AES‑256‑GCM. The key is derived from your master password using
+        <p>Your vault is sealed with AES‑256‑GCM. The key is derived from your master password with
            PBKDF2 (310,000 iterations) and never leaves your device.</p></div>
-      <div class="card"><div class="ic i2">🔑</div><h3>Everything in one place</h3>
-        <p>Store usernames, passwords, secure notes, and your own custom fields. A built‑in generator
-           creates strong, unique passwords in a tap.</p></div>
+      <div class="card"><div class="ic i2">🗂️</div><h3>Organized your way</h3>
+        <p>Sort items into Logins, Credit Cards, Email Accounts, and Bank Accounts — each with the
+           right fields — plus custom fields and a built‑in password generator.</p></div>
       <div class="card"><div class="ic i3">☁️</div><h3>Sync via your Google Drive</h3>
-        <p>Your encrypted vault syncs through a private folder in your own Google Drive, keeping
-           iPhone, iPad, and Mac up to date — with the same master password.</p></div>
-      <div class="card"><div class="ic i4">👤</div><h3>Face ID &amp; Touch ID</h3>
-        <p>Unlock instantly with biometrics, or fall back to your master password. The vault locks
-           itself when you leave.</p></div>
-      <div class="card"><div class="ic i5">🚫</div><h3>No accounts, no tracking</h3>
-        <p>There's no MaxPassword account and no analytics server. We don't run ads and we don't
-           profile you.</p></div>
-      <div class="card"><div class="ic i6">📱</div><h3>iPhone, iPad &amp; Mac</h3>
+        <p>Your encrypted vault syncs through a private folder in your own Google Drive, keeping all
+           your devices up to date with the same master password.</p></div>
+      <div class="card"><div class="ic i5">⚡</div><h3>Set up new devices in seconds</h3>
+        <p>On a new device, connect Google Drive and enter your master password — your vault restores
+           instantly. No exports, no copying files around.</p></div>
+      <div class="card"><div class="ic i4">👤</div><h3>Face ID, Touch ID &amp; auto‑lock</h3>
+        <p>Unlock instantly with biometrics, and the vault locks itself automatically after you step
+           away — on a timer you choose.</p></div>
+      <div class="card"><div class="ic i6">🌐</div><h3>Website icons, your call</h3>
+        <p>Add a website to any login and optionally show its icon. It's off by default and never
+           required — your privacy stays in your hands.</p></div>
+      <div class="card"><div class="ic i2">🚫</div><h3>No accounts, no tracking</h3>
+        <p>There's no MaxPassword account, no analytics, and no ads. We don't profile you, and no
+           server of ours ever holds your data.</p></div>
+      <div class="card"><div class="ic i1">📱</div><h3>iPhone, iPad &amp; Mac</h3>
         <p>One vault across all your Apple devices, with a bold, modern design that feels right at
            home on each one.</p></div>
     </div>
@@ -153,12 +161,26 @@
     </p>
   </section>
 
+  <section id="roadmap" class="block">
+    <h2>What's <span class="grad">coming next</span></h2>
+    <p class="lead">MaxPassword is actively evolving. Here's a peek at what's on the way.</p>
+    <div class="grid">
+      <div class="card"><div class="ic i6">🤖</div><h3>Android app <span class="soon">Coming soon</span></h3>
+        <p>The same encrypted vault on Android, syncing through your own Google Drive right alongside
+           your Apple devices.</p></div>
+      <div class="card"><div class="ic i3">🔢</div><h3>2FA codes (TOTP) <span class="soon">Planned</span></h3>
+        <p>Store and generate time‑based one‑time codes right next to the logins they protect.</p></div>
+      <div class="card"><div class="ic i4">🖼️</div><h3>Secure photos <span class="soon">Planned</span></h3>
+        <p>Keep IDs, insurance cards, and other sensitive images encrypted inside your vault.</p></div>
+    </div>
+  </section>
+
   <footer>
     <div class="row">
-      <div>© 2026 MaxPassword brought to you by MaxTadi </div>
+      <div>© 2026 Krishna Tadi · MaxPassword.</div>
       <div>
         <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
-        <a href="mailto:krishna.tadi@gmail.com">krishna.tadi@gmail.com</a>
+        <a href="mailto:krishna@maxtadi.com">krishna@maxtadi.com</a>
       </div>
     </div>
   </footer>
